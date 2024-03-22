@@ -22,6 +22,8 @@ st.title('Spam Email Classifier')
 st.write('Enter the text to classify whether it is spam or not:')
 user_input = st.text_area('Input Text')
 
+st.markdown("<p style='font-size: 14px;'><span style='text-decoration:underline;color:red;'>NOTE</span> : Please make sure to hard reload the page if you encounter any errors or discrepancies in the content. You can do this by pressing Ctrl + Shift + R (or Cmd + Shift + R on macOS)</p>", unsafe_allow_html=True)
+
 # Make predictions
 
 if st.button('Predict'):
