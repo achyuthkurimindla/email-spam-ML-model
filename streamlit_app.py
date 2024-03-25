@@ -19,6 +19,7 @@ with open('vectorizer.pkl', 'rb') as f:
 
 # Define the Streamlit UI
 st.title('Spam Email Classifier')
+st.markdown("<p style='font-size: 14px;'>This model is built using natural language processing (NLP) techniques and trained on a limited dataset of labeled emails.</p>",unsafe_allow_html=True)
 st.write('Enter the text to classify whether it is spam or not:')
 user_input = st.text_area('Input Text')
 
