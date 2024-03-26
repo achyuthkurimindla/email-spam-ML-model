@@ -5,8 +5,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tensorflow.keras.models import load_model
 import joblib
 
+
+def load_trained_model(model_file_path):
+    try:
+        model = load_model(model_file_path)
+        return model
+    except Exception as e:
+        st.error(f"Error loading model: {e}")
+        return None
 # Load the trained model
-model = load_model('spam_classifier_model.h5')
+model = load_trained_model('spam_classifier_model.h5')
 
 # Load the TfidfVectorizer
 vectorizer = TfidfVectorizer(min_df=1, stop_words='english', lowercase=True)
