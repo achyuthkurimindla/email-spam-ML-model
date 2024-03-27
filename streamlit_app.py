@@ -11,7 +11,7 @@ def load_trained_model(model_file_path):
         model = load_model(model_file_path)
         return model
     except Exception as e:
-        st.error(f"Error loading model: {e}")
+        st.error(f"Error loading model: awaiting for the model to load(Try Again)")
         return None
 # Load the trained model
 model = load_trained_model('spam_classifier_model.h5')
