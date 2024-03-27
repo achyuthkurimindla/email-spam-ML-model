@@ -5,13 +5,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tensorflow.keras.models import load_model
 import joblib
 
-
+@st.cache_resource
 def load_trained_model(model_file_path):
     try:
         model = load_model(model_file_path)
         return model
     except Exception as e:
-        st.error(f"Error loading model: awaiting for the model to load(Try Again)")
+        st.error(f"Error occured while loading the model: awaiting for the model to load(Try Again){e}")
         return None
 # Load the trained model
 # model = load_trained_model('spam_classifier_model.h5')
