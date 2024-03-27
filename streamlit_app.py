@@ -14,7 +14,11 @@ def load_trained_model(model_file_path):
         st.error(f"Error loading model: awaiting for the model to load(Try Again)")
         return None
 # Load the trained model
-model = load_trained_model('spam_classifier_model.h5')
+# model = load_trained_model('spam_classifier_model.h5')
+with st.spinner("Loading model..."):
+    model = load_trained_model('spam_classifier_model.h5')
+    if model is None:
+        st.stop()
 
 # Load the TfidfVectorizer
 vectorizer = TfidfVectorizer(min_df=1, stop_words='english', lowercase=True)
